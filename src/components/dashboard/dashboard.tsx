@@ -19,7 +19,7 @@ const DashBoard: React.FC<{ endpoint: string, serviceName: string }> = (props) =
             <div className="Dash">
                 <MainNavbar/>
                 <header className="App-header">
-                    <Badge style={{marginTop: 15, marginBottom: 10}} variant="primary">{props.serviceName} Tracing Listener</Badge>
+                    <Badge style={{marginTop: 15, marginBottom: 10}} variant="primary">{props.serviceName} adsf Listener</Badge>
                     <FieldsContainer/>
                 </header>
             </div>
