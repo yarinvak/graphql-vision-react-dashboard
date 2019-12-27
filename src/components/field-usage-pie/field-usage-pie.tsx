@@ -22,6 +22,11 @@ const FieldUsagePie: React.FC = () => {
                 series: data.fieldUsages.map(({count}: { count: number }) => count),
                 chartOptions: {
                     labels: data.fieldUsages.map(({name}: { name: string }) => name),
+                    legend: {
+                        labels: {
+                            colors: "#b7e0ff"
+                        }
+                    }
                 }
             }
         ;

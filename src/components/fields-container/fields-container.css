@@ -1,6 +1,12 @@
-.Fields-Container{
+.Fields-Container {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #172B3A;
+    padding-top: 10px;
+}
+
+.Usage-Info {
+    width: 100%;
 }

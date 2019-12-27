@@ -2,6 +2,7 @@ import React from 'react';
 import {Table} from 'react-bootstrap';
 import {gql} from 'apollo-boost';
 import {useQuery} from "@apollo/react-hooks";
+import './field-usage-table.css';
 
 const FieldUsageTable: React.FC = () => {
     const {loading, error, data} = useQuery(gql`
@@ -18,7 +19,8 @@ const FieldUsageTable: React.FC = () => {
     if (error) return (<p>Error Generating Table</p>);
     if (data.fieldUsages.length == 0) return (<p>
         Waiting for tracing result...<br/>
-        Analytics Information appears once you send your apollo-tracing results from your graphql server to the vision server
+        Analytics Information appears once you send your apollo-tracing results from your graphql server to the vision
+        server
     </p>);
 
     let sortedData = data.fieldUsages.sort((a: any, b: any) => b.count - a.count);
@@ -29,13 +31,13 @@ const FieldUsageTable: React.FC = () => {
     });
 
     return (
-        <Table bordered hover>
+        <Table bordered striped hover variant="dark" responsive className="Usage-Table">
             <thead>
-            <tr>
-                <th>Field Path</th>
-                <th>Usage Count</th>
-                <th>Average Resolving Time (ns)</th>
-            </tr>
+                <tr>
+                    <th>Field Path</th>
+                    <th>Usage Count</th>
+                    <th>Average Resolving Time (ns)</th>
+                </tr>
             </thead>
             <tbody>
             {
