@@ -6,6 +6,7 @@ import {ApolloProvider} from '@apollo/react-hooks';
 import ApolloClient from 'apollo-boost';
 import FieldsContainer from "../fields-container/fields-container";
 import {Tab, Tabs} from "react-bootstrap";
+import ServiceInfo from "../service-info/service-info";
 
 const DashBoard: React.FC<{ endpoint: string, serviceName: string }> = (props) => {
     const endpoint = props.endpoint;
@@ -24,7 +25,7 @@ const DashBoard: React.FC<{ endpoint: string, serviceName: string }> = (props) =
                             <FieldsContainer/>
                         </Tab>
                         <Tab eventKey="service" title="Service Info">
-                            blabla
+                            <ServiceInfo/>
                         </Tab>
                         <Tab eventKey="contact" title="Contact">
                             blabla

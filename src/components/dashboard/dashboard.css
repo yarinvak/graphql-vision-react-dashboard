@@ -18,14 +18,17 @@
 }
 
 .nav-link{
-    background-color: #131b2a;
+    background-color: #172534;
     color: #bdbdbd;
     border: 0;
+    margin-right: 10px;
+    color: grey;
 }
 
 .nav-link:hover{
-    color: white;
+    background-color: #172B3A;
     border: 0;
+    color: grey;
 }
 
 .tab-content{
