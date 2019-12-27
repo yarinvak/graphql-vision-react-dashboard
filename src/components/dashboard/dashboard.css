@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700&display=swap');
+
 .Dash {
     text-align: center;
 }
@@ -14,21 +16,32 @@
     flex-direction: column;
     align-items: center;
     background-color: #0F202D !important;
+    font-family: 'Raleway', sans-serif;
     /*justify-content: center;*/
 }
 
 .nav-link{
     background-color: #172534;
     color: #bdbdbd;
-    border: 0;
+    border: 0 !important;
     margin-right: 10px;
     color: grey;
 }
 
+.nav-tabs{
+    border: 0 !important;
+}
+
 .nav-link:hover{
     background-color: #172B3A;
-    border: 0;
+    border: 0 !important;
     color: grey;
+}
+
+.nav-link:focus, .nav-link:active{
+    outline: 0;
+    border: none;
+    -moz-outline-style: none;
 }
 
 .tab-content{
