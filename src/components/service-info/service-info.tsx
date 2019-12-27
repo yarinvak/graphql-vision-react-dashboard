@@ -1,18 +1,31 @@
 import './service-info.css';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {Card} from "react-bootstrap";
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import {gql} from 'apollo-boost';
+import {useQuery} from "@apollo/react-hooks";
 
 const ServiceInfo: React.FC = () => {
+    const {loading, error, data} = useQuery(gql`
+        {
+            serviceInfo{
+                url
+                lastRequestTime
+            }
+        }
+    `, {pollInterval: 500, fetchPolicy: 'no-cache'});
+
+    if (loading) return (<div className="Service-Info"><p>Loading..</p></div>);
+    let cacheServiceInfo= {url: '----', lastRequestTime: '----'};
+    if (data){
+        cacheServiceInfo = data.serviceInfo;
+    }
     return (
         <div className="Service-Info">
             <h2>Service Information</h2>
             <ul dir="ltr" className="text-left">
-                <li>Monitored Service is <b>http://localhost:4000/graphql</b></li>
-                <li>Last Request Received on <b>2019-12-27 14:30</b></li>
-                <li>Service is <b className="text-success">Alive</b></li>
+                <li>Monitored Service is <b>{data? data.serviceInfo.url: cacheServiceInfo.url}</b></li>
+                <li>Last Request Received on <b>{data? data.serviceInfo.lastRequestTime: cacheServiceInfo.lastRequestTime}</b></li>
+                <li>Service is <b className="text-success">{error? 'Dead': 'Alive'}</b></li>
             </ul>
         </div>
     );
