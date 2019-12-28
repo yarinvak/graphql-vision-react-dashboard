@@ -19,15 +19,17 @@ const FieldUsageTable: React.FC<FieldUsageProps> = (props:FieldUsageProps) => {
                 <th>Field Path</th>
                 <th>Usage Count</th>
                 <th>Average Resolving Time (ns)</th>
+                <th>Last Request Date</th>
             </tr>
             </thead>
             <tbody>
             {
-                sortedData.map(({name, count, averageDuration}: { name: string, count: number, averageDuration: number }, index: number) => {
+                sortedData.map(({name, count, averageDuration, lastRequestTime}: { name: string, count: number, averageDuration: number, lastRequestTime: string}, index: number) => {
                     return <tr key={index}>
                         <td>{name}</td>
                         <td>{count} ({Math.round(count * 100 / sum)}%)</td>
                         <td>{averageDuration}</td>
+                        <td>{new Date(lastRequestTime).toLocaleString()}</td>
                     </tr>
                 })
             }
