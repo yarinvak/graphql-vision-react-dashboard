@@ -4,7 +4,6 @@ import FieldUsagePie from "../field-usage-pie/field-usage-pie";
 import './fields-container.css';
 import {useQuery} from "@apollo/react-hooks";
 import {gql} from 'apollo-boost';
-import logo from '../../graphql-vision.png';
 import ErrorContainer from "../error/error";
 
 export interface FieldUsageProps {
