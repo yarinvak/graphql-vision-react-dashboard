@@ -7,7 +7,6 @@ import ApolloClient from 'apollo-boost';
 import FieldsContainer from "../fields-container/fields-container";
 import {Tab, Tabs} from "react-bootstrap";
 import ServiceInfo from "../service-info/service-info";
-
 const DashBoard: React.FC<{ endpoint: string, serviceName: string }> = (props) => {
     const endpoint = props.endpoint;
 
