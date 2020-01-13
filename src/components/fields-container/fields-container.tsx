@@ -10,17 +10,18 @@ export interface FieldUsageProps {
     results: any;
 }
 
-const FieldsContainer: React.FC = () => {
+const FieldsContainer: React.FC<{ senderId?: string }> = (props: { senderId?: string }) => {
+    const senderId = props.senderId;
     const {loading, error, data} = useQuery(gql`
-        {
-            fieldUsages{
+        query($senderId: String){
+            fieldUsages(senderId: $senderId){
                 name
                 count
                 averageDuration
                 lastRequestTime
             }
         }
-    `, {pollInterval: 500});
+    `, {pollInterval: 500, variables: {senderId: senderId}});
 
     if (loading) return (<div className="Fields-Container"><p>Loading..</p></div>);
     if (error) return (<div className="Fields-Container">
