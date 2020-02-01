@@ -14,7 +14,12 @@ export const KeepAlivePoint: React.FC<{ senderId: string, pollInterval: number }
     if (loading) return (<span></span>);
     if (error) return (<span></span>);
     if (data.keepAlive) {
-        return (<div className="scale-up-center circle-object"></div>);
+        return (<div className="circle-container">
+            <div title="Indicates if service is alive" className="circle-outer-object">
+            </div>
+            <div  className="scale-up-center circle-object">
+            </div>
+        </div>);
     }
 
 
