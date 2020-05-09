@@ -9,8 +9,9 @@ Required Properties:
 - endpoint: string - the url for the vision service
 - serviceName: the name of the service that sends the tracing information to the graphql vision service
 
-### How To Run
-- In order to run the example, do the following:
+### Work on the project
+- In order to run the example (and debug the dashboard), do the following:
+    - `npm i && npm run build`
     - `cd example`
     - `npm i && npm link-libs` (For initialization)
     - `npm start`
