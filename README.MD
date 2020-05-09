@@ -10,8 +10,9 @@ Required Properties:
 
 ### How To Run
 - In order to run the example, do the following:
-    - `cd example && npm i && npm link-libs` (For initialization)
-    - `npm run start`
+    - `cd example`
+    - `npm i && npm link-libs` (For initialization)
+    - `npm start`
 
 Every change in the root directory needs to be built in order to be reflected in the example (`npm run build`).
     
