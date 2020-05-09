@@ -1,6 +1,7 @@
 GraphQL Vision Dashboard
 --------------------------
 ![version](https://img.shields.io/npm/v/graphql-vision-react-dashboard)
+![Node CI](https://github.com/yarinvak/graphql-vision-react-dashboard/workflows/Node%20CI/badge.svg)
 
 This is a react component of a dashboard retreiving tracing information of graphql requests from the graphql vision server.
 
