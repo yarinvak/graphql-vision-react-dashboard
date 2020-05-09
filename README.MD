@@ -18,3 +18,4 @@ Required Properties:
 
 Every change in the root directory needs to be built in order to be reflected in the example (`npm run build`).
     
+Notice that in the `App.tsx` file inside example directory, it defines `localhost:4000` as the vision-server endpoint. You might want to change this in order to connect your vision-server
